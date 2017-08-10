@@ -1,12 +1,12 @@
 const express = require('express');
-const SpeakerController = require('../controllers/SpeakerController.js');
-// Controllers
-
+const SpeakersController = require('../controllers/SpeakersController.js');
 
 module.exports = (app) => {
   const apiRoutes = express.Router();
 
   app.use('/api', apiRoutes);
 
-  apiRoutes.get('/speaker', SpeakerController.getSpeakers);
-}
+  apiRoutes.get('/speakers', SpeakersController.list);
+  apiRoutes.post('/speakers', SpeakersController.create);
+  apiRoutes.get('/speakers/:speaker', SpeakersController.retrieve);
+};
