@@ -1,0 +1,19 @@
+{
+  "name": "hello-mean",
+  "version": "0.0.1",
+  "description": "A simple MEAN intro in order to lean and grow!",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Francisco Baena <baena.francisco@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

@@ -1,0 +1,19 @@
+mongodb:
+  image: mongo
+  ports:
+    - "27017:27017"
+  volumes:
+    - "~/data:/data/db"
+web:
+  build: .
+  command: npm run dev
+  volumes:
+    - .:/usr/app/
+    - /usr/app/node_modules
+  ports:
+    - "8000:8000"
+  links:
+    - mongodb
+  environment:
+    DATABASE_URL: mongodb://mongodb:27017/hello-mean
+    PORT: 8000
